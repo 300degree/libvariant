@@ -1,17 +1,36 @@
+/*
+ * This is free and unencumbered software released into the public domain.
+ *
+ * Anyone is free to copy, modify, publish, use, compile, sell, or
+ * distribute this software, either in source code form or as a compiled
+ * binary, for any purpose, commercial or non-commercial, and by any
+ * means.
+ *
+ * For more information, please refer to <http://unlicense.org/>
+ */
+
 #ifndef _VARIANT_H
 #define _VARIANT_H
 
-#include <stdint.h>
+#if defined(__cplusplus) && __cplusplus < 201703L
+#error "This code requires at least C++17"
+#endif /* __cplusplus */
 
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
-extern void variant_set_int(int);
-extern void variant_set_string(const char *);
+#include <stdint.h>
+
+typedef struct variant_t variant_t;
+typedef uint32_t variant_int;
+
+extern variant_t *variant_create(void);
+extern void variant_destroy(variant_t *object);
+extern void variant_store_int(const variant_t *object, variant_int value);
+extern variant_int variant_load_int(const variant_t *object);
 
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
-
 #endif /* _VARIANT_H */
