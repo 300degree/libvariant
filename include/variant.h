@@ -20,15 +20,18 @@
 extern "C" {
 #endif /* __cplusplus */
 
+#define VEXTERN extern __attribute__((visibility("default")))
+
 #include <stdint.h>
 
 typedef struct variant_t variant_t;
 typedef uint32_t variant_int;
+typedef const char *variant_string;
 
-extern variant_t *variant_create(void);
-extern void variant_destroy(variant_t *object);
-extern void variant_store_int(const variant_t *object, variant_int value);
-extern variant_int variant_load_int(const variant_t *object);
+VEXTERN variant_t *variant_create(void);
+VEXTERN void variant_destroy(variant_t *object);
+VEXTERN void variant_store_int(variant_t *object, variant_int value);
+VEXTERN variant_int variant_load_int(variant_t *object);
 
 #ifdef __cplusplus
 }
