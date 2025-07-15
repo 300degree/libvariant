@@ -31,7 +31,9 @@ typedef const char *variant_string;
 VEXTERN variant_t *variant_create(void);
 VEXTERN void variant_destroy(variant_t *object);
 VEXTERN void variant_store_int(variant_t *object, variant_int value);
+VEXTERN void variant_store_string(variant_t *object, variant_string value);
 VEXTERN variant_int variant_load_int(variant_t *object);
+VEXTERN variant_string variant_load_string(variant_t *object);
 
 #ifdef __cplusplus
 }
