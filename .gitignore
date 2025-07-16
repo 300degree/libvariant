@@ -28,6 +28,7 @@
 *.la
 
 [Bb]in/
+[Bb]uild/
 [Dd]ebug/
 [Ll]ib/
 [Ll]og/
@@ -47,6 +48,7 @@ configure
 libtool
 stamp-h?
 Makefile.in
+Makefile
 ar-lib
 compile
 depcomp
