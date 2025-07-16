@@ -47,7 +47,6 @@ configure
 libtool
 stamp-h?
 Makefile.in
-Makefile
 ar-lib
 compile
 depcomp
